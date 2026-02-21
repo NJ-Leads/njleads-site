@@ -1,4 +1,4 @@
-  :root{
+:root{
   --blue:#123C8C;
   --blue2:#1E6BB8;
   --orange:#F36F0A;
@@ -302,4 +302,71 @@ input:focus, textarea:focus{
   margin-top: 10px;
   font-size: 13px;
   color: var(--muted);
+}
+
+/* =========================================================
+   COVERAGE PAGE IMPROVEMENTS
+   - Better flow per card
+   - "Reserve a Town" button on every card
+   - Roofs + Siding titles in orange
+   ========================================================= */
+
+/* Full-width button utility (used on coverage cards) */
+.btn.full{
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Coverage card layout */
+.coverage-card{
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  min-height: 260px; /* keeps rows aligned; adjust if you want taller */
+}
+
+/* Content area */
+.coverage-body{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+/* Title */
+.coverage-title{
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+  line-height: 1.15;
+}
+
+/* Make only Roofs + Siding orange by adding class "is-orange" in HTML */
+.coverage-title.is-orange{
+  color: var(--orange);
+}
+
+/* Bottom area pinned to the bottom for consistent flow */
+.coverage-foot{
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+/* "Sold as" line */
+.sold-as{
+  font-size: 13px;
+  color: var(--muted);
+}
+.sold-label{
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* Optional: if you want slightly tighter spacing on smaller screens */
+@media (max-width: 900px){
+  .coverage-card{min-height: auto}
 }
