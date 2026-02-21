@@ -308,10 +308,10 @@ input:focus, textarea:focus{
    COVERAGE PAGE IMPROVEMENTS
    - Better flow per card
    - "Reserve a Town" button on every card
-   - Roofs + Siding titles in orange
+   - ALL category titles are orange (Bundle stays white)
    ========================================================= */
 
-/* Full-width button utility (used on coverage cards) */
+/* Full-width button utility */
 .btn.full{
   width: 100%;
   text-align: center;
@@ -323,7 +323,7 @@ input:focus, textarea:focus{
   padding: 18px;
   display:flex;
   flex-direction:column;
-  min-height: 260px; /* keeps rows aligned; adjust if you want taller */
+  min-height: 260px;
 }
 
 /* Content area */
@@ -333,20 +333,21 @@ input:focus, textarea:focus{
   gap: 10px;
 }
 
-/* Title */
+/* Title (default orange for categories) */
 .coverage-title{
   margin: 0;
   font-size: 22px;
   letter-spacing: -0.2px;
   line-height: 1.15;
-}
-
-/* Make only Roofs + Siding orange by adding class "is-orange" in HTML */
-.coverage-title.is-orange{
   color: var(--orange);
 }
 
-/* Bottom area pinned to the bottom for consistent flow */
+/* Featured card title stays white for contrast */
+.coverage-card.featured .coverage-title{
+  color: var(--text);
+}
+
+/* Bottom area pinned to the bottom */
 .coverage-foot{
   margin-top: auto;
   padding-top: 14px;
@@ -366,7 +367,6 @@ input:focus, textarea:focus{
   color: var(--text);
 }
 
-/* Optional: if you want slightly tighter spacing on smaller screens */
 @media (max-width: 900px){
   .coverage-card{min-height: auto}
 }
