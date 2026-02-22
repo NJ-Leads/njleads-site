@@ -10,90 +10,34 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    /* Page-specific polish to match the dark hero theme */
-    .contact-hero {
-      padding: 56px 0 26px;
-    }
-    .contact-hero .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 26px;
-      align-items: start;
-    }
-    .contact-hero h1 {
-      margin: 10px 0 12px;
-    }
-    .contact-hero .sub {
-      margin: 0;
-      max-width: 60ch;
-      color: rgba(255,255,255,.82);
-      font-size: 1.05rem;
-      line-height: 1.55;
-    }
-    .contact-hero .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-    .glass-card {
-      border-radius: 22px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 20px 55px rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
-      padding: 18px 18px;
-    }
-    .chip-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 10px 12px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.88);
-      font-weight: 650;
-      font-size: .95rem;
-    }
-    .chip b { color: #fff; font-weight: 850; }
-    .chip.orange {
-      background: rgba(243,111,10,.14);
-      border-color: rgba(243,111,10,.25);
-    }
+    /* Defensive styling so the contact page always uses the same “dark hero” feel */
+    .contact-wrap { padding: 54px 0 72px; }
+    .contact-hero { padding: 12px 0 18px; }
+    .contact-hero h1 { margin: 12px 0 10px; }
+    .contact-hero .sub { max-width: 70ch; opacity: .9; line-height: 1.55; }
 
-    .contact-main {
-      padding: 26px 0 70px;
-    }
     .contact-grid {
       display: grid;
       grid-template-columns: 1.05fr .95fr;
       gap: 26px;
       align-items: start;
+      margin-top: 22px;
     }
 
-    /* Form inside dark theme */
-    .form-card {
-      padding: 22px;
+    /* Glass card style (matches your site) */
+    .glass {
+      border-radius: 22px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 20px 55px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+      padding: 20px;
     }
-    .form-card h2 {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-    .field label {
-      color: rgba(255,255,255,.88);
-      font-weight: 750;
-    }
-    .field input,
-    .field textarea {
+
+    .field { margin-top: 12px; }
+    .field label { display:block; font-weight: 750; margin-bottom: 8px; opacity: .95; }
+    .field input, .field textarea{
       width: 100%;
-      margin-top: 8px;
       padding: 12px 12px;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.12);
@@ -101,29 +45,18 @@
       color: rgba(255,255,255,.92);
       outline: none;
     }
-    .field input::placeholder,
-    .field textarea::placeholder {
-      color: rgba(255,255,255,.55);
-    }
     .field textarea { min-height: 120px; resize: vertical; }
-    .notice {
-      color: rgba(255,255,255,.65);
-      font-size: .92rem;
-      margin-top: 12px;
-      line-height: 1.45;
-    }
+    .notice { margin-top: 12px; opacity: .75; font-size: .92rem; line-height: 1.45; }
 
-    .right-stack { display:flex; flex-direction:column; gap: 18px; }
+    .stack { display:flex; flex-direction:column; gap: 18px; }
 
     @media (max-width: 980px){
-      .contact-hero .hero-grid,
       .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV (same as main theme) -->
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="NJLeads Home">
@@ -152,15 +85,16 @@
     </div>
   </header>
 
-  <!-- HERO (dark theme) -->
-  <main class="page">
-    <section class="contact-hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
+  <!-- IMPORTANT: background wrapper (this is what your homepage has, and contact was missing) -->
+  <div class="bg">
+    <div class="bg-inner">
+      <main class="contact-wrap">
+        <div class="container">
+
+          <section class="contact-hero">
             <div class="pill">
               <span class="pill-dot"></span>
-              <span><b>NJLeads</b> • Reserve a town</span>
+              <span><b>NJLeads</b> • Get availability + next steps</span>
             </div>
 
             <h1>Contact</h1>
@@ -169,111 +103,95 @@
               availability and next steps.
             </p>
 
-            <div class="hero-actions">
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
               <a class="btn primary" href="#contact-form">Send a message</a>
               <a class="btn" href="pricing.html">See pricing</a>
             </div>
-          </div>
+          </section>
 
-          <div class="glass-card">
-            <h3 style="margin:0 0 10px;">What happens next</h3>
-            <p class="sub" style="font-size:1rem; margin:0;">
-              We’ll confirm availability for your requested town(s) and category mix, then walk you through onboarding.
-            </p>
+          <section class="contact-grid">
+            <!-- Form -->
+            <div class="glass" id="contact-form">
+              <h3 style="margin:0 0 10px;">Send a message</h3>
 
-            <div class="chip-row">
-              <div class="chip"><b>Exclusive</b> town coverage</div>
-              <div class="chip"><b>Category</b> bundles</div>
-              <div class="chip orange"><b>Annual</b> refresh</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+              <form action="#" method="post">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                </div>
 
-    <!-- CONTENT -->
-    <section class="contact-main">
-      <div class="container">
-        <div class="contact-grid">
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" placeholder="Your company name" autocomplete="organization" />
+                </div>
 
-          <!-- FORM -->
-          <div class="glass-card form-card" id="contact-form">
-            <h2>Send a message</h2>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+                </div>
 
-            <!-- Placeholder action for now -->
-            <form action="#" method="post">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
-              </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" />
+                </div>
 
-              <div class="field">
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text" placeholder="Your company name" autocomplete="organization" />
-              </div>
+                <div class="field">
+                  <label for="town">Town(s) of interest</label>
+                  <input id="town" name="town" type="text" placeholder="e.g., Cherry Hill, Voorhees, Marlton…" />
+                </div>
 
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
-              </div>
+                <div class="field">
+                  <label for="categories">Categories</label>
+                  <input id="categories" name="categories" type="text" placeholder="e.g., Roofs, Siding, Windows, Driveways, Fences" />
+                </div>
 
-              <div class="field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" />
-              </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us what you're looking for (exclusive town, bundle, timeline, etc.)" required></textarea>
+                </div>
 
-              <div class="field">
-                <label for="town">Town(s) of interest</label>
-                <input id="town" name="town" type="text" placeholder="e.g., Cherry Hill, Voorhees, Marlton…" />
-              </div>
+                <button class="btn primary" type="submit" style="margin-top:14px;">Send message</button>
 
-              <div class="field">
-                <label for="categories">Categories</label>
-                <input id="categories" name="categories" type="text" placeholder="e.g., Roofs, Siding, Windows, Driveways, Fences" />
-              </div>
-
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell us what you're looking for (exclusive town, bundle, timeline, etc.)" required></textarea>
-              </div>
-
-              <button class="btn primary" type="submit">Send message</button>
-
-              <div class="notice">
-                By submitting, you agree to be contacted by NJLeads about availability and onboarding.
-              </div>
-            </form>
-          </div>
-
-          <!-- RIGHT SIDE -->
-          <div class="right-stack">
-
-            <div class="glass-card">
-              <h3 style="margin:0 0 10px;">How reservations work</h3>
-              <p class="sub" style="font-size:1rem; margin:0;">
-                We offer exclusive rights by <strong>town + category</strong>. Once a town/category is reserved, we don’t sell it
-                to competing contractors.
-              </p>
-              <p class="sub" style="font-size:1rem; margin:12px 0 0;">
-                You’ll receive a private portal experience with a detailed property list, visuals, and tracking—refreshed annually.
-              </p>
+                <div class="notice">
+                  By submitting, you agree to be contacted by NJLeads about availability and onboarding.
+                </div>
+              </form>
             </div>
 
-            <div class="glass-card">
-              <h3 style="margin:0 0 10px;">Faster outreach. Better close rate.</h3>
-              <p class="sub" style="font-size:1rem; margin:0;">
-                Instead of guessing where to knock, NJLeads helps you prioritize the highest-opportunity streets using visual indicators
-                of exterior replacement needs.
-              </p>
-              <a class="btn" href="pricing.html" style="margin-top:14px;">View pricing</a>
-            </div>
+            <!-- Right side -->
+            <div class="stack">
+              <div class="glass">
+                <h3 style="margin:0 0 10px;">How reservations work</h3>
+                <p style="margin:0; opacity:.9; line-height:1.55;">
+                  We offer exclusive rights by <strong>town + category</strong>. Once a town/category is reserved, we don’t sell it
+                  to competing contractors.
+                </p>
+                <p style="margin:12px 0 0; opacity:.9; line-height:1.55;">
+                  You’ll receive a private portal experience with a detailed property list, visuals, and tracking—refreshed annually.
+                </p>
 
-          </div>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+                  <div class="chip"><b>Exclusive</b> town coverage</div>
+                  <div class="chip"><b>Category</b> bundles</div>
+                  <div class="chip orange"><b>Annual</b> refresh</div>
+                </div>
+              </div>
+
+              <div class="glass">
+                <h3 style="margin:0 0 10px;">Faster outreach. Better close rate.</h3>
+                <p style="margin:0; opacity:.9; line-height:1.55;">
+                  Instead of guessing where to knock, NJLeads helps you prioritize the highest-opportunity streets using visual indicators
+                  of exterior replacement needs.
+                </p>
+                <a class="btn" href="pricing.html" style="margin-top:14px;">View pricing</a>
+              </div>
+            </div>
+          </section>
 
         </div>
-      </div>
-    </section>
-  </main>
+      </main>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
