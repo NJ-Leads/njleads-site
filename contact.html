@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Contact | NJLeads</title>
-  <meta name="description" content="Contact NJLeads to reserve exclusive town rights and receive exterior opportunities through our portal." />
+  <meta name="description" content="Contact NJLeads to reserve exclusive town rights and receive exterior opportunities through our system." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="canonical" href="https://njleads.com/contact.html" />
@@ -12,12 +12,12 @@
 
 <body>
 
-  <!-- Navigation (matches main pages) -->
+  <!-- Navigation -->
   <div class="topbar">
     <div class="container">
       <div class="nav">
         <a class="brand" href="/">
-          <img src="/assets/logo-icon.png" alt="NJLeads Logo" onerror="this.style.display='none';" />
+          <img src="/assets/logo-icon.png" alt="NJLeads Logo" />
           <span class="brand-name">NJLeads</span>
         </a>
 
@@ -38,13 +38,12 @@
       <div class="badge">Contact NJLeads</div>
       <h1>Talk to us</h1>
       <p>
-        Want to reserve a town or bundle multiple categories? Tell us what you’re looking for and we’ll confirm
-        availability and next steps.
+        Want to reserve a town or bundle multiple categories?
+        Tell us what you’re looking for and we’ll confirm availability and next steps.
       </p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://portal.njleads.com" target="_blank" rel="noopener">Client Portal</a>
-        <a class="btn btn-secondary" href="/pricing.html">View Pricing</a>
+        <a class="btn btn-primary" href="/pricing.html">View Pricing</a>
       </div>
     </div>
   </section>
@@ -58,26 +57,25 @@
           <section class="card">
             <h2>Send a message</h2>
 
-            <!-- NOTE: For now action is placeholder. Later you can wire to Formspree/HubSpot/API -->
             <form action="#" method="post" style="margin-top:14px;">
               <div class="field">
                 <label for="name"><strong>Name</strong></label>
-                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                <input id="name" name="name" type="text" placeholder="Your name" required />
               </div>
 
               <div class="field" style="margin-top:12px;">
                 <label for="company"><strong>Company</strong></label>
-                <input id="company" name="company" type="text" placeholder="Your company name" autocomplete="organization" />
+                <input id="company" name="company" type="text" placeholder="Your company name" />
               </div>
 
               <div class="field" style="margin-top:12px;">
                 <label for="email"><strong>Email</strong></label>
-                <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
+                <input id="email" name="email" type="email" placeholder="you@company.com" required />
               </div>
 
               <div class="field" style="margin-top:12px;">
                 <label for="phone"><strong>Phone</strong></label>
-                <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" />
+                <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" />
               </div>
 
               <div class="field" style="margin-top:12px;">
@@ -95,7 +93,9 @@
                 <textarea id="message" name="message" placeholder="Tell us what you're looking for (exclusive town, bundle, timeline, etc.)" required></textarea>
               </div>
 
-              <button class="btn btn-primary" type="submit" style="margin-top:14px;">Send message</button>
+              <button class="btn btn-primary" type="submit" style="margin-top:14px;">
+                Send message
+              </button>
 
               <p style="margin-top:12px; color: rgba(2,6,23,.65); font-size: 0.95em;">
                 By submitting, you agree to be contacted by NJLeads about availability and onboarding.
@@ -104,16 +104,14 @@
           </section>
         </div>
 
-        <!-- Right: Next steps -->
+        <!-- Right Side -->
         <aside class="side">
+
           <section class="card">
             <h2>How reservations work</h2>
             <p>
-              We offer exclusive rights by <strong>town + category</strong>. Once a town/category is reserved,
-              we don’t sell it to competing contractors.
-            </p>
-            <p style="margin-top:10px;">
-              You’ll receive a private portal experience with a detailed property list, visuals, and tracking—refreshed annually.
+              We offer exclusive rights by <strong>town + category</strong>.
+              Once reserved, we don’t sell that town/category to competing contractors.
             </p>
 
             <div style="margin-top:14px;">
@@ -126,20 +124,11 @@
           <section class="card" style="margin-top:20px;">
             <h2>Faster outreach. Better close rate.</h2>
             <p>
-              Instead of guessing where to knock, NJLeads helps you prioritize high-opportunity streets using visual indicators
+              NJLeads helps you prioritize high-opportunity streets using visual indicators
               of exterior replacement needs.
             </p>
-            <a class="btn btn-secondary" href="/pricing.html" style="margin-top:10px;">View pricing</a>
           </section>
 
-          <section class="card" style="margin-top:20px;">
-            <h2>Explore</h2>
-            <ul>
-              <li><a href="/territories.html">View Territories</a></li>
-              <li><a href="/coverage.html">Offerings Overview</a></li>
-              <li><a href="/how-it-works.html">How It Works</a></li>
-            </ul>
-          </section>
         </aside>
 
       </div>
@@ -149,16 +138,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-        <div>© <span id="year"></span> NJLeads. All rights reserved.</div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="/how-it-works.html">How It Works</a>
-          <a href="/territories.html">Territories</a>
-          <a href="/coverage.html">Offerings</a>
-          <a href="/pricing.html">Pricing</a>
-          <a href="/contact.html">Contact</a>
-        </div>
-      </div>
+      © <span id="year"></span> NJLeads. All rights reserved.
     </div>
   </footer>
 
